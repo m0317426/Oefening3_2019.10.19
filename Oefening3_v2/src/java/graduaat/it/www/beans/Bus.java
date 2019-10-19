@@ -32,7 +32,7 @@ public class Bus {
     }
     
     public String toevoegen(Reiziger reiziger){
-       
+       this.reiziger.add(reiziger);
         return "lijst";
     }
 
