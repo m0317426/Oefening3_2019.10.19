@@ -5,34 +5,37 @@
  */
 package graduaat.it.www.beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.xml.rpc.encoding.Serializer;
 
 /**
  *
  * @author c1041731
  */
 @Named ("Bus")
-@RequestScoped
+@SessionScoped
 
-public class Bus {
+public class Bus implements Serializable{
 
-    private ArrayList<Reiziger> reiziger;
+    private ArrayList<Reiziger> reizigers =new ArrayList<>();
 
     public Bus() {
     }
 
     public ArrayList<Reiziger> getReiziger() {
-        return reiziger;
+        return reizigers;
     }
 
     public void setReiziger(ArrayList<Reiziger> reiziger) {
-        this.reiziger = reiziger;
+        this.reizigers = reiziger;
     }
     
     public String toevoegen(Reiziger reiziger){
-       this.reiziger.add(reiziger);
+       this.reizigers.add(reiziger);
         return "lijst";
     }
 
