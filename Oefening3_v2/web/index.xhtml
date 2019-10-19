@@ -10,8 +10,10 @@
     
     <h:body>
         <h1>Ga ook mee naar de sneeuw. Reserveer nu een plaatsje in de bus</h1>
-       
-                   
+        <h:form>
+            <h:inputText id="naam" value="#{reiziger.naam}" required="true" requiredMessage="Naam is verplicht"/>           
+            <h:commandButton value="Toevoegen aan lijst" action="toevoegen"/>
+        </h:form>                  
     </h:body>
 </html>
 
